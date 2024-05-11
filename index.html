@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html">
+    <meta http-equiv="content-style-type" content="text/css">
+    <meta http-equiv="default-style" content="main.css">
+    <meta http-equiv="content-script-type" content="text/javascript">
+    <meta http-equiv="default-script" content="page.js">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <meta http-equiv="X-DNS-prefetch-control" content="on">
+    <meta name="url" content="https://chastantshontz.github.io/knight-of-the-night">
+    <meta name="author" content="Chastant Shontz">
+    <meta name="reply-to" content="chastant542@gmail.com">
+    <meta name="generator" content="GitHub Desktop">
+    <meta name="date" content="2024-05-10">
+    <meta name="copyright" content="Copyright &copy; 2024 Chastant Shontz, all rights reserved">
+    <meta name="subject" content="Knight of the Night">
+    <meta name="description" content="A video game about the Knight of the Night">
+    <meta name="distribution" content="global">
+    <meta name="rating" content="general">
+    <meta name="keywords" content="">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:large">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="viewport" content="height=device-height, width=device-width, user-scalable=yes, initial-scale=1, minimum-scale=.1, maximum-scale=10">
+    <meta name="color-scheme" content="only light">
+    <meta name="theme-color" content="#004E42">
+    <title>The Knight of the Night Rises</title>
+    <link href="README.md" hreflang="en-us" charset="utf-8" rel="readme" fetchpriority="low" type="text/markdown">
+    <link href="https://fonts.gstatic.com" hreflang="en-us" charset="utf-8" rel="preconnect" fetchpriority="high" referrerpolicy="strict-origin-when-cross-origin" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Montserrat|Roboto|Zilla+Slab" hreflang="en-us" charset="utf-8" rel="preload stylesheet" as="style" fetchpriority="high" referrerpolicy="strict-origin-when-cross-origin" crossorigin="anonymous" type="text/css">
+    <link href="normalize.css" hreflang="en-us" charset="utf-8" rel="preload stylesheet" as="style" fetchpriority="high" type="text/css">
+    <link href="main.css" hreflang="en-us" charset="utf-8" rel="preload stylesheet" as="style" fetchpriority="high" type="text/css">
+  </head>
+  <body onload="profileEntrance()">
+    <header></header>
+    <main>
+      <section id="background">
+      </section>
+      <aside id="profileCont">
+        <div id="profile">
+        </div>
+        <div id="profileTalkContCont">
+          <p id="profileName">Welcome!</p>
+          <div id="profileTalkCont">
+            <div id="spacer">
+            </div>
+            <button type="button" class="defaultButton" id="ok" aria-label="Keep clicking here to move the game forward" onclick="gotIt1()">OK</button>
+            <p id="profileTalk">Great to see you here! I built this video game for my senior project in the COMM department. Go on and click the button below to move it forward...</p>
+          </div>
+        </div>
+      </aside>
+      <div class="genderCont" id="menCont" aria-label="Select the men's game" onclick="selectGender(1)">
+        <div class="gender" id="men">
+        </div>
+        <p class="genderLabel" id="menLabel">Men</p>
+      </div>
+      <div class="genderCont" id="womenCont" aria-label="Select the women's game" onclick="selectGender(2)">
+        <div class="gender" id="women">
+        </div>
+        <p class="genderLabel" id="womenLabel">Women</p>
+      </div>
+      <form accept-charset="utf-8" id="infoCont">
+        <fieldset form="infoCont" id="info">
+          <div class="infoField" id="namesField">
+            <div class="infoLabelCont" id="nameLabelCont">
+              <label form="infoCont" for="nameInput" class="infoLabel" id="nameLabel">Name:</label>
+              <button type="reset" class="infoButton clearInfo defaultButton" id="clearName" aria-label="Clear the info on your name" onclick="remove(1, event)">Clear</button>
+            </div>
+            <div class="infoInputCont" id="nameInputCont">
+              <input form="infoCont" list="namesList" type="text" name="name" placeholder="Name..." size="25" minlength="1" maxlength="50" title="Enter your name here" class="infoInput" id="nameInput" aria-label="Enter your name here" onkeydown="process(1, event)" onblur="leave(1)" autocomplete="name" autofocus>
+              <button type="submit" class="infoButton enterInfo defaultButton" id="enterName" aria-label="Enter your name" onclick="store(1, event)">&#9166;</button>
+            </div>
+            <datalist id="namesList">
+              <option value="Autumn">
+              <option value="Carly">
+              <option value="Cassie">
+              <option value="Chestnut">
+              <option value="Frank">
+              <option value="Hannah">
+              <option value="Henry">
+              <option value="Isaac">
+              <option value="Marlah">
+              <option value="Pedersen">
+              <option value="Rose">
+              <option value="Tommy">
+            </datalist>
+          </div>
+          <div class="infoField" id="yearField">
+            <div class="infoLabelCont" id="yearLabelCont">
+              <label form="infoCont" for="yearInput" class="infoLabel" id="yearLabel">Year:</label>
+              <button type="reset" class="infoButton clearInfo defaultButton" id="clearYear" aria-label="Clear the info on your year" onclick="remove(2, event)">Clear</button>
+            </div>
+            <div class="infoInputCont" id="yearInputCont">
+              <input form="infoCont" list="yearList" type="text" name="year" placeholder="Year..." size="25" minlength="1" maxlength="50" title="Enter your year here" class="infoInput" id="yearInput" aria-label="Enter your year here" onkeydown="process(2, event)" onblur="leave(2)" autocomplete="year">
+              <button type="submit" class="infoButton enterInfo defaultButton" id="enterYear" aria-label="Enter your year" onclick="store(2, event)">&#9166;</button>
+            </div>
+            <datalist id="yearsList">
+              <option value="Alum">
+              <option value="Freshman">
+              <option value="Graduate student">
+              <option value="Junior">
+              <option value="Schoolie">
+              <option value="Senior">
+              <option value="Sophomore">
+            </datalist>
+          </div>
+          <div class="infoField" id="majorField">
+            <div class="infoLabelCont" id="majorLabelCont">
+              <label form="infoCont" for="majorInput" class="infoLabel" id="majorLabel">Major:</label>
+              <button type="reset" class="infoButton clearInfo defaultButton" id="clearMajor" aria-label="Clear the info on your major" onclick="remove(3, event)">Clear</button>
+            </div>
+            <div class="infoInputCont" id="majorInputCont">
+              <input form="infoCont" list="majorsList" type="text" name="major" placeholder="Major..." size="25" minlength="1" maxlength="50" title="Enter your major here" class="infoInput" id="majorInput" aria-label="Enter your major here" onkeydown="process(3, event)" onblur="leave(3)" autocomplete="major">
+              <button type="submit" class="infoButton enterInfo defaultButton" id="enterMajor" aria-label="Enter your major" onclick="store(3, event)">&#9166;</button>
+            </div>
+            <datalist id="majorsList">
+              <option value="Accounting">
+              <option value="Aerospace engineering">
+              <option value="Applied mathematics & statistics">
+              <option value="Biology">
+              <option value="Biomolecular science">
+              <option value="Business intelligence & data analytics">
+              <option value="Business studies">
+              <option value="Chemical engineering">
+              <option value="Chemistry">
+              <option value="Civil engineering">
+              <option value="Communication, media, & design">
+              <option value="Computer engineering">
+              <option value="Computer science">
+              <option value="Data science">
+              <option value="Digital arts & sciences">
+              <option value="Direct entry healthcare">
+              <option value="Economics">
+              <option value="Electrical engineering">
+              <option value="Engineering & management">
+              <option value="Engineering studies">
+              <option value="Environmental engineering">
+              <option value="Environmental health science">
+              <option value="Environmental science & policy">
+              <option value="Finance">
+              <option value="Financial information & analysis">
+              <option value="Global supply chain management">
+              <option value="Healthcare">
+              <option value="History">
+              <option value="Human resources">
+              <option value="Information systems">
+              <option value="Innovation & entrepreneurship">
+              <option value="Liberal studies">
+              <option value="Literature">
+              <option value="Marketing">
+              <option value="Mathematics">
+              <option value="Mechanical engineering">
+              <option value="Occupational therapy">
+              <option value="Physical therapy">
+              <option value="Physician assistant studies">
+              <option value="Physics">
+              <option value="Political science">
+              <option value="Pre-health sciences">
+              <option value="Pre-law">
+              <option value="Psychology">
+              <option value="Science studies">
+              <option value="Sex & drugs">
+              <option value="Social documentation">
+              <option value="Social sciences">
+              <option value="Software enineering">
+              <option value="Undecided">
+              <option value="University studies">
+            </datalist>
+          </div>
+          <div class="infoField" id="socialSecurityNumberField">
+            <div class="infoLabelCont" id="socialSecurityNumberLabelCont">
+              <label form="infoCont" for="socialSecurityNumberInput" class="infoLabel" id="socialSecurityNumberLabel">Social Security Number:</label>
+              <button type="reset" class="infoButton clearInfo defaultButton" id="clearSocialSecurityNumber" aria-label="Clear the info on your Social Security number" onclick="remove(4, event)">Clear</button>
+            </div>
+            <div class="infoInputCont" id="socialSecurityNumberInputCont">
+              <input form="infoCont" type="number" name="socialSecurityNumber" placeholder="No spaces (ex. 123456789)" size="25" min="100000000" maxlength="999999999" step="1" title="Enter your Social Security number here" class="infoInput" id="socialSecurityNumberInput" aria-label="Enter your Social Security number here" onkeydown="process(4, event)" onblur="leave(4)" autocomplete="off">
+              <button type="submit" class="infoButton enterInfo defaultButton" id="enterSocialSecurityNumber" aria-label="Enter your Social Security number" onclick="store(4, event)">&#9166;</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+      <section id="arenasCont">
+        <div id="arenas">
+          <div class="arenaCont" id="cecCont">
+            <div class="arena" id="cec" onclick="selectArena(1)">
+            </div>
+          </div>
+          <div class="arenaCont" id="snellHallAtriumCont">
+            <div class="arena" id="snellHallAtrium" onclick="selectArena(2)">
+            </div>
+          </div>
+          <div class="arenaCont" id="snellHallClassroomCont">
+            <div class="arena" id="snellHallClassroom" onclick="selectArena(3)">
+            </div>
+          </div>
+          <div class="arenaCont" id="scienceCenterClassroomCont">
+            <div class="arena" id="scienceCenterClassroom" onclick="selectArena(4)">
+            </div>
+          </div>
+          <div class="arenaCont" id="ercCont">
+            <div class="arena" id="erc" onclick="selectArena(5)">
+            </div>
+          </div>
+          <div class="arenaCont" id="studentCenterForumCont">
+            <div class="arena" id="studentCenterForum" onclick="selectArena(6)">
+            </div>
+          </div>
+          <div class="arenaCont" id="cheelArenaAtriumCont">
+            <div class="arena" id="cheelArenaAtrium" onclick="selectArena(7)">
+            </div>
+          </div>
+          <div class="arenaCont" id="cheelArenaRinkCont">
+            <div class="arena" id="cheelArenaRink" onclick="selectArena(8)">
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="styles">
+        <div class="style" id="aikido">
+          <div class="styleButtonCont" id="aikidoButtonCont">
+            <button type="button" class="styleButton defaultButton" id="aikidoButton" aria-label="Select Aikido as one of your styles" onclick="selectStyle(1)">Aikido</button>
+          </div>
+        </div>
+        <div class="style" id="boxing">
+          <div class="styleButtonCont" id="boxingButtonCont">
+            <button type="button" class="styleButton defaultButton" id="boxingButton" aria-label="Select Boxing as one of your styles" onclick="selectStyle(2)">Boxing</button>
+          </div>
+        </div>
+        <div class="style" id="brazilianJiuJitsu">
+          <div class="styleButtonCont" id="brazilianJiuJitsuButtonCont">
+            <button type="button" class="styleButton defaultButton" id="brazilianJiuJitsuButton" aria-label="Select Brazilian Jiu-Jitsu as one of your styles" onclick="selectStyle(3)">Brazilian Jiu-Jitsu</button>
+          </div>
+        </div>
+        <div class="style" id="capoeira">
+          <div class="styleButtonCont" id="capoeiraButtonCont">
+            <button type="button" class="styleButton defaultButton" id="capoeiraButton" aria-label="Select Capoeira as one of your styles" onclick="selectStyle(4)">Capoeira</button>
+          </div>
+        </div>
+        <div class="style" id="eskrima">
+          <div class="styleButtonCont" id="eskrimaButtonCont">
+            <button type="button" class="styleButton defaultButton" id="eskrimaButton" aria-label="Select Eskrima as one of your styles" onclick="selectStyle(5)">Eskrima</button>
+          </div>
+        </div>
+        <div class="style" id="hapkido">
+          <div class="styleButtonCont" id="hapkidoButtonCont">
+            <button type="button" class="styleButton defaultButton" id="hapkidoButton" aria-label="Select Hapkido as one of your styles" onclick="selectStyle(6)">Hapkido</button>
+          </div>
+        </div>
+        <div class="style" id="jeetKuneDo">
+          <div class="styleButtonCont" id="jeetKuneDoButtonCont">
+            <button type="button" class="styleButton defaultButton" id="jeetKuneDoButton" aria-label="Select Jeet Kune Do as one of your styles" onclick="selectStyle(7)">Jeet Kune Do</button>
+          </div>
+        </div>
+        <div class="style" id="judo">
+          <div class="styleButtonCont" id="judoButtonCont">
+            <button type="button" class="styleButton defaultButton" id="judoButton" aria-label="Select Judo as one of your styles" onclick="selectStyle(8)">Judo</button>
+          </div>
+        </div>
+        <div class="style" id="karate">
+          <div class="styleButtonCont" id="karateButtonCont">
+            <button type="button" class="styleButton defaultButton" id="karateButton" aria-label="Select Karate as one of your styles" onclick="selectStyle(9)">Karate</button>
+          </div>
+        </div>
+        <div class="style" id="kravMaga">
+          <div class="styleButtonCont" id="kravMagaButtonCont">
+            <button type="button" class="styleButton defaultButton" id="kravMagaButton" aria-label="Select Krav Maga as one of your styles" onclick="selectStyle(10)">Krav Maga</button>
+          </div>
+        </div>
+        <div class="style" id="muayThai">
+          <div class="styleButtonCont" id="muayThaiButtonCont">
+            <button type="button" class="styleButton defaultButton" id="muayThaiButton" aria-label="Select Muay Thai as one of your styles" onclick="selectStyle(11)">Muay Thai</button>
+          </div>
+        </div>
+        <div class="style" id="sambo">
+          <div class="styleButtonCont" id="samboButtonCont">
+            <button type="button" class="styleButton defaultButton" id="samboButton" aria-label="Select Sambo as one of your styles" onclick="selectStyle(12)">Sambo</button>
+          </div>
+        </div>
+        <div class="style" id="silat">
+          <div class="styleButtonCont" id="silatButtonCont">
+            <button type="button" class="styleButton defaultButton" id="silatButton" aria-label="Select Silat as one of your styles" onclick="selectStyle(13)">Silat</button>
+          </div>
+        </div>
+        <div class="style" id="systema">
+          <div class="styleButtonCont" id="systemaButtonCont">
+            <button type="button" class="styleButton defaultButton" id="systemaButton" aria-label="Select Systema as one of your styles" onclick="selectStyle(14)">Systema</button>
+          </div>
+        </div>
+        <div class="style" id="taekwondo">
+          <div class="styleButtonCont" id="taekwondoButtonCont">
+            <button type="button" class="styleButton defaultButton" id="taekwondoButton" aria-label="Select Taekwondo as one of your styles" onclick="selectStyle(15)">Taekwondo</button>
+          </div>
+        </div>
+        <div class="style" id="wingChun">
+          <div class="styleButtonCont" id="wingChunButtonCont">
+            <button type="button" class="styleButton defaultButton" id="wingChunButton" aria-label="Select Wing Chun as one of your styles" onclick="selectStyle(16)">Wing Chun</button>
+          </div>
+        </div>
+        <div class="style" id="wushu">
+          <div class="styleButtonCont" id="wushuButtonCont">
+            <button type="button" class="styleButton defaultButton" id="wushuButton" aria-label="Select Wushu as one of your styles" onclick="selectStyle(17)">Wushu</button>
+          </div>
+        </div>
+      </section>
+      <section id="cover">
+        <dialog class="modal" id="more">
+          <p id="moreMessage">Would you like to fight again?</p>
+          <div id="moreButtons">
+            <button type="submit" name="more" value="accept" class="moreButton defaultButton" id="moreButton" aria-label="Do another fight" onclick="more(1, event)">YES</button>
+            <button type="submit" name="more" value="decline" class="moreButton defaultButton" id="noMoreButton" aria-label="End the game" onclick="more(2, event)">NO</button>
+          </div>
+        </dialog>
+        <div class="modal" id="gameOver">
+          <p id="gameOverMessage">Game over! Hope you enjoyed it! Refresh this page to play again or let someone else have a turn.</p>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+    <script src="page.js" charset="utf-8" fetchpriority="high" type="text/javascript" async></script>
+  </body>
+</html>

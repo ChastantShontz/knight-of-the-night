@@ -1,0 +1,469 @@
+/* Imported Fonts */
+
+@import url("https://fonts.googleapis.com/css?family=Archivo+Black|Montserrat|Roboto|Zilla+Slab");
+
+/* Element Styles */
+
+* {
+  accent-color: var(--clarksonGreen);
+}
+
+*::selection {
+  background: var(--clarksonGreen) !important;
+  color: var(--white) !important;
+}
+
+html {
+  font-size: 1em;
+}
+
+#background {
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: fixed url("img/clarksonUniversity.png") center / cover;
+}
+
+#profileCont {
+  z-index: 98;
+  display: grid;
+  grid-template-columns: calc(33% - .1em) calc(67% - .1em);
+  grid-column-gap: .2em;
+  grid-template-rows: 1fr;
+  position: fixed;
+  left: -30em;
+  bottom: 2em;
+  border-radius: .5em;
+  background: var(--white);
+  height: 10em;
+  width: 30em;
+  border: .2em solid var(--clarksonGreen);
+}
+
+#profile {
+  border-top-left-radius: .3em;
+  border-bottom-left-radius: .3em;
+  background: url("img/profile.png") center / cover;
+  border-right: .2em solid var(--clarksonGreen);
+}
+
+#profileTalkContCont {
+  border-left: .2em solid var(--clarksonGreen);
+}
+
+#profileName {
+  width: 100%;
+  padding-left: 1em;
+  border-bottom: .2rem solid var(--clarksonGreen);
+  font-family: "Montserrat", sans-serif;
+  color: var(--clarksonGreen);
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+#profileTalkCont {
+  width: 100%;
+}
+
+#spacer {
+  float: right;
+  height: 5.18em;
+  width: 0;
+}
+
+#ok {
+  position: relative;
+  float: right;
+  clear: right;
+  border-radius: .25em;
+  background: var(--buttonGreen);
+  padding-left: .25em;
+  padding-right: .25em;
+  padding-top: .1em;
+  padding-bottom: .1em;
+  margin: .2rem;
+  font-family: "Archivo Black", sans-serif;
+  color: var(--white);
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+#profileTalk {
+  width: 100%;
+  padding: .5em;
+  font-family: "Zilla Slab", serif;
+  font-size: .9em;
+}
+
+.genderCont {
+  position: fixed;
+  bottom: 40%;
+  width: 15em;
+  cursor: pointer;
+}
+
+#menCont {
+  left: -15em;
+}
+
+#womenCont {
+  right: -15em;
+}
+
+.gender {
+  border-radius: .5em;
+  height: 15em;
+  width: 100%;
+  margin-bottom: .25em;
+}
+
+#men {
+  background: url("img/men.png") top / cover;
+}
+
+#women {
+  background: url("img/women.png") top / cover;
+}
+
+.genderLabel {
+  border-radius: .5em;
+  background: var(--white);
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.25em;
+  font-weight: bold;
+  text-align: center;
+}
+
+#menLabel {
+  color: var(--blue);
+}
+
+#womenLabel {
+  color: var(--pink);
+}
+
+#infoCont {
+  visibility: hidden;
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  top: 15%;
+  bottom: 35%;
+  opacity: 0;
+}
+
+#info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 15%;
+  grid-template-rows: repeat(2, 1fr);
+  grid-row-gap: 25%;
+  height: 100%;
+  width: 100%;
+  border: none;
+}
+
+.infoField {
+  border-radius: .5em;
+  background: rgba(255, 255, 255, .75);
+  height: fit-content;
+  width: fit-content;
+  padding: 1em;
+}
+
+.infoLabelCont {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: .5em;
+  align-items: center;
+}
+
+.infoLabel {
+  font-family: "Roboto", sans-serif;
+  color: var(--clarksonGreen);
+}
+
+.infoButton {
+  border-radius: .1em;
+  padding: .25em;
+  font-family: "Roboto", sans-serif;
+  color: var(--white);
+}
+
+.clearInfo {
+  visibility: hidden;
+  background: var(--buttonRed);
+  opacity: 0;
+}
+
+.enterInfo {
+  background: var(--buttonGreen);
+  margin-left: .25em;
+}
+
+#styles {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+  visibility: hidden;
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  top: 15%;
+  bottom: 35%;
+  opacity: 0;
+}
+
+.style {
+  display: flex;
+  justify-content: center;
+  width: 10em;
+  align-items: center;
+}
+
+.style:nth-child(1) > .styleButtonCont > .styleButton,
+.style:nth-child(10)>.styleButtonCont>.styleButton {
+  background: var(--white);
+}
+
+.style:nth-child(2) > .styleButtonCont > .styleButton,
+.style:nth-child(11)>.styleButtonCont>.styleButton {
+  background: var(--yellow);
+}
+
+.style:nth-child(3) > .styleButtonCont > .styleButton,
+.style:nth-child(12)>.styleButtonCont>.styleButton {
+  background: var(--orange);
+}
+
+.style:nth-child(4) > .styleButtonCont > .styleButton,
+.style:nth-child(13)>.styleButtonCont>.styleButton {
+  background: var(--green);
+}
+
+.style:nth-child(5) > .styleButtonCont > .styleButton,
+.style:nth-child(14)>.styleButtonCont>.styleButton {
+  background: var(--blue);
+}
+
+.style:nth-child(6) > .styleButtonCont > .styleButton,
+.style:nth-child(15)>.styleButtonCont>.styleButton {
+  background: var(--violet);
+}
+
+.style:nth-child(7) > .styleButtonCont > .styleButton,
+.style:nth-child(16)>.styleButtonCont>.styleButton {
+  background: var(--red);
+}
+
+.style:nth-child(8) > .styleButtonCont > .styleButton,
+.style:nth-child(17)>.styleButtonCont>.styleButton {
+  background: var(--brown);
+  color: var(--white);
+}
+
+.style:nth-child(9) > .styleButtonCont > .styleButton {
+  background: var(--black);
+  color: var(--white);
+}
+
+.styleButtonCont {
+  border-radius: .5em;
+  background: var(--white);
+  transition: transform .1s ease 0s;
+}
+
+.styleButtonCont:has(.defaultButton:active) {
+  transform: scale(.95);
+}
+
+.styleButton {
+  border-radius: .5em;
+  padding: .5em;
+}
+
+.styleButton:active {
+  transform: scale(1) !important;
+}
+
+#arenasCont {
+  display: flex;
+  justify-content: center;
+  visibility: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  align-items: center;
+}
+
+#arenas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 2em;
+  grid-auto-rows: 1fr;
+  grid-row-gap: 2em;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2%;
+  padding-bottom: 15%;
+}
+
+.arenaCont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arena {
+  border-radius: .5em;
+  background: var(--lightGray);
+  height: 10em;
+  width: 20em;
+  border: .2em solid var(--clarksonGreen);
+  cursor: pointer;
+}
+
+#cec {
+  background: url("img/cec.png") center / cover;
+}
+
+#snellHallAtrium {
+  background: url("img/snellHallAtrium.png") center / cover;
+}
+
+#snellHallClassroom {
+  background: url("img/snellHallClassroom.png") center / cover;
+}
+
+#scienceCenterClassroom {
+  background: url("img/scienceCenterClassroom.png") center / cover;
+}
+
+#erc {
+  background: url("img/erc.png") center / cover;
+}
+
+#studentCenterForum {
+  background: url("img/studentCenterForum.png") center / cover;
+}
+
+#cheelArenaAtrium {
+  background: url("img/cheelArenaAtrium.png") center / cover;
+}
+
+#cheelArenaRink {
+  background: url("img/cheelArenaRink.png") center / cover;
+}
+
+#cover {
+  z-index: 99;
+  visibility: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(153, 153, 153, .75);
+  opacity: 0;
+}
+
+.modal {
+  position: absolute;
+}
+
+#more {
+  left: 40%;
+  right: 40%;
+  top: 20%;
+  border-radius: .5em;
+  border: .2em solid var(--clarksonGreen);
+}
+
+#gameOver {
+  display: flex;
+  justify-content: center;
+  visibility: hidden;
+  left: 25%;
+  right: 25%;
+  top: 25%;
+  bottom: 25%;
+  border-radius: 1em;
+  background: var(--white);
+  opacity: 0;
+  padding: 5%;
+  align-items: center;
+}
+
+#moreMessage {
+  margin-bottom: 1em;
+}
+
+#moreButtons {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  align-items: center;
+}
+
+.moreButton {
+  border-radius: .25em;
+  font-family: "Archivo Black", sans-serif;
+  color: var(--white);
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+#moreButton {
+  background: var(--buttonGreen);
+  padding-left: .25em;
+  padding-right: .25em;
+  padding-top: .1em;
+  padding-bottom: .1em;
+}
+
+#noMoreButton {
+  background: rgba(179, 14, 15, .5);
+  padding-left: .15em;
+  padding-right: .15em;
+  border: .1em solid var(--buttonRed);
+}
+
+#gameOverMessage {
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  color: var(--clarksonGreen);
+  font-size: 2em;
+  text-align: center;
+}
+
+/* Animation Effects */
+
+@keyframes expand {
+  100% {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+}
+
+/* Color Variables */
+
+:root {
+  --buttonRed: #B30E0F;
+  --clarksonGold: #FFCD00;
+  --buttonGreen: #5CB245;
+  --clarksonGreen: #004E42;
+}
